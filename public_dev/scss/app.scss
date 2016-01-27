@@ -197,15 +197,15 @@ div {
     }
 
     &.hidden {
-        @include animation(logo-exit 0s 0.2s ease-in-out);
+        @include animation(logo-exit 0.1s ease-in-out);
         @include animation-fill-mode(forwards);
 
         .lineOne {
-            @include animation(left-out 0.2s ease-in-out);
+            @include animation(left-out 0.4s ease-in-out);
         }
 
         .lineTwo {
-            @include animation(right-out 0.2s ease-in-out);
+            @include animation(right-out 0.4s ease-in-out);
         }
     }
 }
