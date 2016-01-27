@@ -1,1 +1,267 @@
-.home {}
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+@import "../bower_components/susy/sass/susy";
+
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        container: auto,
+        container-position: center,
+        columns: 12,
+        gutters: .25,
+        column-width: false,
+        global-box-sizing: content-box,
+        last-flow: to,
+        debug: (
+                image: hide,
+                color: rgba(#66f, .25),
+                output: background,
+                toggle: top right,
+        ),
+        use-custom: (
+                background-image: true,
+                background-options: false,
+                box-sizing: true,
+                clearfix: false,
+                rem: true,
+        )
+);
+
+html,body {
+    height: 100%;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.outerFrame {
+    height: 100%;
+    position: relative;
+    padding:20px;
+    //border: 20px solid #eee;
+
+    &>.borderTop, &>.borderLeft, &>.borderBottom, &>.borderRight {
+        display: block;
+        position: absolute;
+        background: #eee;
+        z-index: 2;
+    }
+
+    &>.borderTop {
+        top:0;
+        left: 0;
+        height: 20px;
+        width: 100%;
+    }
+
+    &>.borderLeft {
+        top:0;
+        left: 0;
+        bottom: 0;
+        width: 20px;
+    }
+
+    &>.borderBottom {
+        bottom:0;
+        left: 0;
+        height: 20px;
+        width: 100%;
+    }
+
+    &>.borderRight {
+        top:0;
+        right: 0;
+        bottom: 0;
+        width: 20px;
+    }
+
+    div[ui-view] {
+        position: relative;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.selectableContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .columnLeft, .columnRight{
+        position: absolute;
+        width: 100%;
+        top:-50%;
+        bottom: -50%;
+        @include transform(rotate(20deg));
+        @include transition(all 0.3s ease-in-out);
+        z-index: 1;
+        //@include transition(z-index 0s 0.2s ease-in-out);
+
+        .contentContainer {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top:25%;
+            //background: BLUE;
+            @include transform(rotate(-20deg));
+            @include transition(all 0.3s ease-in-out);
+        }
+    }
+
+    .columnLeft {
+        right:50%;
+        //background: #4294f0;
+        @include transform-origin(100% 50%);
+        background: #fff;
+
+        .contentContainer {
+            right: 0;
+            @include transform-origin(100% 50%);
+        }
+
+        &.open {
+            z-index: 2;
+            right: 10%;
+
+            @include transform(rotate(10deg));
+
+            .contentContainer {
+                @include transform(rotate(-10deg));
+            }
+        }
+    }
+
+    .columnRight {
+        //display: none;
+        left: 50%;
+        background: #eee;
+        @include transform-origin(0% 50%);
+
+        .contentContainer {
+            left: 0;
+            @include transform-origin(0% 50%);
+        }
+
+        &.open {
+            left: 10%;
+            @include transform(rotate(5deg));
+            z-index: 2;
+
+            .contentContainer {
+                @include transform(rotate(-5deg));
+            }
+        }
+    }
+}
+
+.logo {
+    z-index: 5;
+    position: absolute;
+    height: 100px;
+    top:50%;
+    margin-top:-50px;
+    width: 100%;
+    font-family: 'Megrim', cursive;
+    font-size: 50px;
+    @include transform(rotate(-70deg));
+
+    .lineOne, .lineTwo {
+        line-height: 50px;
+        position: absolute;
+        width: 200px;
+        @include transition(all 0.3s ease-in-out);
+    }
+
+    .lineOne {
+        top:0;
+        left: 0;
+
+        @include animation(left-in 0.4s ease-in-out);
+        @include animation-fill-mode(forwards);
+    }
+
+    .lineTwo {
+        bottom:0;
+        right: 0;
+        @include transform(rotateY(180deg));
+        @include animation(right-in 0.4s ease-in-out);
+        @include animation-fill-mode(forwards);
+
+    }
+
+    &.hidden {
+        @include animation(logo-exit 0s 0.2s ease-in-out);
+        @include animation-fill-mode(forwards);
+
+        .lineOne {
+            @include animation(left-out 0.2s ease-in-out);
+        }
+
+        .lineTwo {
+            @include animation(right-out 0.2s ease-in-out);
+        }
+    }
+}
+
+@include keyframes (logo-exit) {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+        z-index: 0;
+    }
+}
+
+
+@include keyframes (left-in) {
+    0% {
+        opacity: 0;
+        left: 0;
+    }
+    100% {
+        opacity: 1;
+        left: 50%;
+    }
+}
+
+@include keyframes (left-out) {
+    0%{
+        opacity:1;
+        left: 50%;
+    }
+    100%{
+        opacity: 0;
+        left: 0;
+    }
+}
+
+@include keyframes (right-in) {
+    0%{
+        opacity:0;
+        right: 0;
+    }
+    100%{
+        opacity:1;
+        right: 50%;
+    }
+}
+
+@include keyframes (right-out) {
+    0%{
+        opacity:1;
+        right: 50%;
+    }
+    100%{
+        opacity: 0;
+        right: 0;
+    }
+}
+

@@ -26,6 +26,20 @@ angular.module('Portfolio', [
                 //    }
                 //}
             })
+            .state('home.about', { url: 'about', template: '', controller: 'AboutCtrl'
+                //resolve: {
+                //    UiData: function (UiData) {
+                //        return UiData();
+                //    }
+                //}
+            })
+            .state('home.work', { url: 'work', template: '', controller: 'WorkCtrl'
+                //resolve: {
+                //    UiData: function (UiData) {
+                //        return UiData();
+                //    }
+                //}
+            })
             .state('404', { url: '/404', templateUrl: '/tpls/404.html', controller: 'NotFoundCtrl'})
         ;
 

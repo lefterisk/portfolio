@@ -1,1 +1,17 @@
-home
+<div class="selectableContainer">
+    <div class="logo" ng-class="{hidden: isAboutState || isWorkState}">
+        <div class="lineOne">LEFTERIS</div>
+        <div class="lineTwo">KOKKONAS</div>
+    </div>
+    <div class="columnLeft" ng-class="{open: isAboutState}" ng-click="goToState('about')">
+        <div class="contentContainer">
+            ssweq we wer wer wt w <a ui-sref="home" ng-click="isAboutState = isWorkState= false;">home</a>
+        </div>
+    </div>
+    <div class="columnRight" ng-class="{open: isWorkState}" ng-click="goToState('work')">
+        <div class="contentContainer">
+            wer wer wer wer wer wer
+        </div>
+    </div>
+</div>
+<div ui-view></div>
