@@ -3,14 +3,100 @@
         <div class="lineOne">LEFTERIS</div>
         <div class="lineTwo">KOKKONAS</div>
     </div>
-    <div class="columnLeft" ng-class="{open: isAboutState}" ng-click="goToState('about')">
+    <div class="columnLeft" ng-class="{open: isAboutState}">
         <div class="contentContainer">
-            ssweq we wer wer wt w <a ui-sref="home" ng-click="isAboutState = isWorkState= false;">home</a>
+            <!--<a ui-sref="home" ng-click="isAboutState = isWorkState= false;">home</a>-->
+
+            <div class="table">
+                <div class="row">
+                    <div class="cell">
+                        <span class="aboutTitle">
+                            ABOUT ME <a ui-sref="home.about" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
+                        </span>
+
+                        <span class="aboutContentNeutral" ng-show="!isAboutState && !isWorkState">
+
+                        </span>
+                        <span class="aboutContentOpen" ng-show="isAboutState && !isWorkState">
+                            <span class="container">
+                                <span class="col">
+                                    <div class="pictureFrame">
+                                        <div class="picture"></div>
+                                        <span class="title">WHAT I LOOK LIKE</span>
+                                    </div>
+                                </span>
+                                <span class="col">
+                                    <span class="text">
+                                        <span class="title">WHAT I'M ABOUT</span>
+                                        <p>Hi, my name is Lefteris Kokkonas and I am a detail-focused and passionate end-to-end web-developer with 8 solid years of providing quality web services.</p>
+                                        <p>I strive to keep myself up to date with cutting edge technologies and web-development practices.</p>
+                                        <p>Throughout the course of my career I have worked as a freelancer as well as in cooperation with high end web-service providers like Acknowledgement ltd, Web-Experts, Busy-b studios and Web3 Marketing inc, in a variety of roles including client-facing ones</p>
+                                    </span>
+                                </span>
+                                <span class="col">
+                                    <div class="buzzwords">
+                                        <span class="title">WHAT I DO</span>
+                                        <h2>SERVER SIDE</h2>
+                                        <a href="http://www.php.net/" target="_blank">PHP</a>
+                                        <a href="http://framework.zend.com/" target="_blank">ZEND FRAMEWORK 2</a>
+                                        <a href="http://www.slimframework.com/" target="_blank">SLIM</a>
+                                        <a href="https://www.mysql.com/" target="_blank">MYSQL</a>
+                                        <a href="#">API INTEGRATIONS</a>
+                                        <h2>CLIENT SIDE</h2>
+                                        <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JAVASCRIPT</a>
+                                        <a href="https://jquery.com/" target="_blank">JQUERY</a>
+                                        <a href="https://angularjs.org/" target="_blank">ANGULAR</a>
+                                        <a href="https://www.elastic.co/" target="_blank">ELASTIC SEARCH</a>
+                                        <a href="http://sass-lang.com/" target="_blank">SASS</a>
+                                        <a href="http://getbootstrap.com/" target="_blank">BOOTSTRAP</a>
+                                        <a href="http://bourbon.io/" target="_blank">BOURBON</a>
+                                        <a href="http://susy.oddbird.net/" target="_blank">SUSY</a>
+                                        <h2>PRODUCTIVITY</h2>
+                                        <a href="http://www.adobe.com/uk/products/photoshop.html" target="_blank">PHOTOSHOP</a>
+                                        <a href="http://gulpjs.com/" target="_blank">GULP</a>
+                                        <a href="http://bower.io/" target="_blank">BOWER</a>
+                                        <a href="https://git-scm.com/" target="_blank">GIT</a>
+                                    </div>
+                                </span>
+                            </span>
+                            <br/>
+                            <h2 class="text-center">GET IN TOUCH</h2>
+                            <p class="socials">
+                                <a href="" class="facebook"></a>
+                                <a href="" class="linkedin"></a>
+                                <a href="" class="github"></a>
+                                <a href="" class="gmail"></a>
+                            </p>
+                        </span>
+                        <span class="aboutContentNeutral" ng-show="!isAboutState && isWorkState">
+                            Closed
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="columnRight" ng-class="{open: isWorkState}" ng-click="goToState('work')">
+    <div class="columnRight" ng-class="{open: isWorkState}">
         <div class="contentContainer">
-            wer wer wer wer wer wer
+            <div class="table">
+                <div class="row">
+                    <div class="cell">
+                        <span class="workTitle">
+                            My Work <a ui-sref="home.work" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
+                        </span>
+
+                        <span class="workContentNeutral" ng-show="!isAboutState && !isWorkState">
+                            Neutral
+                        </span>
+                        <span class="workContentOpen" ng-show="!isAboutState && isWorkState">
+                            Open
+                        </span>
+                        <span class="workContentNeutral" ng-show="isAboutState && !isWorkState">
+                            Closed
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

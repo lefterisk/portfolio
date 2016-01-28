@@ -35,6 +35,7 @@ html,body {
     padding: 0;
     overflow: hidden;
     position: relative;
+    font-family: 'Lato', sans-serif;
 }
 
 div {
@@ -89,6 +90,33 @@ div {
     }
 }
 
+.table {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    .row {
+        display: table-row;
+
+        .cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .selectableContainer {
     height: 100%;
     width: 100%;
@@ -133,6 +161,8 @@ div {
             @include transform(rotate(10deg));
 
             .contentContainer {
+                width: 90%;
+                padding: 5%;
                 @include transform(rotate(-10deg));
             }
         }
@@ -265,3 +295,308 @@ div {
     }
 }
 
+.selectableContainer {
+    .open {
+        .aboutTitle {
+            @include transform(rotate(0deg));
+
+            .viewMore {
+                opacity:0;
+            }
+        }
+
+        .workTitle {
+            opacity: 0;
+        }
+
+        .table .row .cell {
+            padding: 70px 0;
+        }
+    }
+}
+
+.aboutTitle, .workTitle {
+    font-family: 'Megrim', cursive;
+    font-size: 4em;
+    line-height: 55px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    @include transition(all 0.3s ease-in-out);
+}
+
+.aboutTitle {
+    top: 5px;
+    left: 5px;
+
+    @include transform(rotate(90deg));
+    @include transform-origin(25px 25px);
+
+    .viewMore {
+        right: -100px;
+        top: 0;
+
+        @include transform(rotate(-90deg));
+        @include transform-origin(-25% 50%);
+    }
+}
+
+.workTitle {
+    right: -250px;
+    bottom: 5px;
+    @include transform(rotate(-90deg));
+    @include transform-origin(0% 100%);
+
+    .viewMore {
+        right: -145px;
+        top: 0;
+        @include transform(rotate(90deg));
+        @include transform-origin(0% 13%);
+    }
+}
+
+.viewMore {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.2em;
+    line-height: 1em;
+    padding: 8px 10px;
+    border: 1px solid #000;
+    font-weight: 300;
+    position: absolute;
+    text-align: center;
+    @include transition(all 0.1s ease-in-out);
+
+
+    &:after, &:before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 1px;
+        top:3px;
+        bottom: 3px;
+        background: #000;
+        @include transition(all 0.1s ease-in-out);
+    }
+
+    &:before {
+        left: -1px;
+    }
+
+    &:after {
+        right: -1px;
+    }
+
+    &:hover {
+        &:before {
+            left: -5px;
+        }
+
+        &:after {
+            right: -5px;
+        }
+    }
+}
+
+.aboutContentOpen {
+
+    .container {
+        @include container(100%);
+
+        .col {
+            @include span(4 of 12);
+
+            &:last-of-type {
+                @include span(4 of 12 last);
+            }
+
+            .title {
+                display: inline-block;
+                position: absolute;
+                padding: 4px 8px;
+                background: #999;
+                color: #fff;
+                font-weight: 400;
+            }
+
+            .text {
+                @include animation(fadeInDown 0.4s ease-in-out);
+                @include animation-fill-mode(forwards);
+
+                position: relative;
+                display: block;
+                background: #eee;
+                padding: 15px;
+                font-size: 1.4em;
+                font-weight: 300;
+                line-height: 1.4em;
+
+                p {
+                    margin: 0;
+                    padding: 0 0 15px 0;
+
+                    &:last-of-type {
+                        padding-bottom: 0;
+                    }
+                }
+
+                .title {
+                    left: -10px;
+                    top: -30px;
+                }
+            }
+
+            .pictureFrame {
+                @include animation(fadeInUp 0.4s ease-in-out);
+                @include animation-fill-mode(forwards);
+
+                font-size: 1.4em;
+                background: #eee;
+                height: 500px;
+                position: relative;
+
+                .title {
+                    @include transform(rotate(90deg));
+                    @include transform-origin(0% 100%);
+                    top: -45px;
+                    left: -10px;
+                }
+
+                .picture {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    right: -10px;
+                    bottom: -10px;
+                    background: url("/img/pic2.jpg") center center no-repeat;
+                    background-size: cover;
+                }
+            }
+
+            .buzzwords {
+                @include animation(fadeInUp 0.4s ease-in-out);
+                @include animation-fill-mode(forwards);
+
+                position: relative;
+                font-size: 1.4em;
+
+                h2 {
+                    margin: 20px 0;
+
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+
+                .title {
+                    text-align: center;
+                    right: -10px;
+
+                    @include transform(rotate(-90deg));
+                    @include transform-origin(100% 0%);
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 5px 8px;
+                    border: 1px solid #000;
+                    text-decoration: none;
+                    margin-bottom: 5px;
+                    color: #000;
+                    position: relative;
+
+                    &:after, &:before {
+                        position: absolute;
+                        display: block;
+                        content: ' ';
+                        background: #000;
+                        height: 3px;
+                        bottom: 0;
+                        margin-top: -1.5px;
+                        right: 50%;
+                        left: 50%;
+                        @include transition(all 0.2s ease-in-out);
+                    }
+
+                    &:hover {
+                        &:after {
+                            right: 0px;
+                        }
+
+                        &:before {
+                            left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include keyframes (fadeInDown) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@include keyframes (fadeInUp) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+.socials {
+    text-align: center;
+    margin: 0;
+
+    a {
+        display: inline-block;
+        @include size(70px);
+        color: #000;
+        text-decoration: none;
+        margin: 4px;
+        @include transition(all 0.2s ease-in-out);
+
+        &.facebook {
+            background: url('/img/facebook-square.svg') no-repeat center center;
+        }
+
+        &.linkedin {
+            background: url('/img/linkedin.svg') no-repeat center center;
+        }
+
+        &.github {
+            background: url('/img/github.svg') no-repeat center center;
+        }
+
+        &.gmail {
+            background: url('/img/mail.svg') no-repeat center center;
+        }
+
+        &:hover {
+            @include transform(rotate(20deg));
+
+        }
+    }
+}

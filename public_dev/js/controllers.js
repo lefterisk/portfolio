@@ -5,13 +5,18 @@
 angular.module('Portfolio.controllers', [])
     //Page specific Controllers
     .controller('HomeCtrl',['$rootScope', '$scope', '$state', '$stateParams', function ($rootScope, $scope, $state, $stateParams) {
-        console.log($state.current.name);
         $scope.isWorkState  = false;
         $scope.isAboutState = false;
 
-        $scope.goToState = function (childState) {
-            $state.go('home.' + childState);
-        };
+        //Make sure on history back from child state the layout variables are updated
+        $rootScope.$on('$stateChangeSuccess',
+            function(event, toState){
+                if (toState.name == 'home') {
+                    $scope.isWorkState  = false;
+                    $scope.isAboutState = false;
+                }
+            }
+        );
     }])
     .controller('AboutCtrl',['$scope', '$state', function ($scope, $state) {
         console.log('About');
