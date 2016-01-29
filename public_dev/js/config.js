@@ -10,10 +10,14 @@ angular.module('Portfolio', [
     'ngSanitize',
     'ngCookies',
     'angular-loading-bar',
+
+    'ngScrollbar',
+
     //App
     'Portfolio.controllers',
     'Portfolio.services',
-    'Portfolio.tpls'
+    'Portfolio.tpls',
+    'Portfolio.directives'
 ])
     .config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 

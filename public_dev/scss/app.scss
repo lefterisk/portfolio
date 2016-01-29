@@ -3,31 +3,51 @@
 @import "../bower_components/susy/sass/susy";
 
 $susy: (
-        flow: ltr,
-        math: fluid,
-        output: float,
-        gutter-position: after,
-        container: auto,
-        container-position: center,
-        columns: 12,
-        gutters: .25,
-        column-width: false,
-        global-box-sizing: content-box,
-        last-flow: to,
-        debug: (
-                image: hide,
-                color: rgba(#66f, .25),
-                output: background,
-                toggle: top right,
-        ),
-        use-custom: (
-                background-image: true,
-                background-options: false,
-                box-sizing: true,
-                clearfix: false,
-                rem: true,
-        )
+    flow: ltr,
+    math: fluid,
+    output: float,
+    gutter-position: after,
+    container: auto,
+    container-position: center,
+    columns: 12,
+    gutters: .25,
+    column-width: false,
+    global-box-sizing: content-box,
+    last-flow: to,
+    debug: (
+        image: hide,
+        color: rgba(#66f, .25),
+        output: background,
+        toggle: top right,
+    ),
+    use-custom: (
+        background-image: true,
+        background-options: false,
+        box-sizing: true,
+        clearfix: false,
+        rem: true,
+    ),
+    mobile-breakpoint: 640px,
+    tablet-breakpoint: 860px
 );
+
+@mixin desktop {
+    @media (min-width: susy-get(tablet-breakpoint) + 1px ) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: susy-get(mobile-breakpoint) + 1px) and (max-width: susy-get(tablet-breakpoint)) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: susy-get(mobile-breakpoint)) {
+        @content;
+    }
+}
 
 html,body {
     height: 100%;
@@ -162,7 +182,7 @@ div {
 
             .contentContainer {
                 width: 90%;
-                padding: 5%;
+                padding: 20px 50px 20px 0px;
                 @include transform(rotate(-10deg));
             }
         }
@@ -402,13 +422,35 @@ div {
 .aboutContentOpen {
 
     .container {
+        display: block;
         @include container(100%);
+        @include clearfix();
+        padding: 30px 50px 20px 40px;
+
 
         .col {
-            @include span(4 of 12);
+            @include desktop {
+                @include span(4 of 12);
 
-            &:last-of-type {
-                @include span(4 of 12 last);
+                &:last-of-type {
+                    @include span(4 of 12 last);
+                }
+            }
+
+            @include tablet {
+                @include span(6 of 12);
+
+                &:last-of-type {
+                    @include span(6 of 12 last);
+                }
+            }
+
+            @include mobile {
+                @include span(12 of 12);
+
+                &:last-of-type {
+                    @include span(12 of 12 last);
+                }
             }
 
             .title {
@@ -600,3 +642,24 @@ div {
         }
     }
 }
+
+
+.ngsb-wrap .ngsb-scrollbar {
+    left: -2px;
+    right: auto;
+    width: 15px;
+
+    .ngsb-thumb-pos .ngsb-thumb {
+        width: 100%;
+        background: #ddd;
+        border-radius: 0;
+    }
+
+    .ngsb-track {
+        width: 100%;
+        border-radius: 0;
+        background: 999;
+    }
+
+}
+

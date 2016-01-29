@@ -58,6 +58,7 @@ gulp.task('vendor-js', function () {
 
             'bower_components/angular-ui-router/release/angular-ui-router.min.js',
 
+            'bower_components/ng-scrollbar/dist/ng-scrollbar.min.js',
             'bower_components/angular-loading-bar/build/loading-bar.min.js'
         ]
     )
@@ -110,6 +111,7 @@ gulp.task('vendor-css', function() {
 
     gulp.src(
         [
+            'bower_components/ng-scrollbar/dist/ng-scrollbar.min.css',
             'bower_components/angular-loading-bar/build/loading-bar.min.css',
             'css/vendor/*.css'
         ]
