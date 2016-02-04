@@ -18,17 +18,19 @@ angular.module(
 
                 $timeout(function() {
                     resizeElement();
-                }, 100);
+                }, 1000);
 
                 angular.element($window).bind('resize', function() {
                     resizeElement();
                 });
 
                 scope.$watch(attrs.ngShow, function(newValue,oldvalue) {
-                    if (newValue)
+                    if (newValue) {
                         $timeout(function() {
                             resizeElement();
                         }, 400);
+                    }
+
                 });
 
                 var resizeElement = function () {
@@ -58,6 +60,7 @@ angular.module(
                             element.css('height', (contentContainer.offsetHeight) + 'px');
                         }
                     }
+
                     scope.$emit('content.changed');
                 }
             }

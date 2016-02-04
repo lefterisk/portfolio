@@ -180,7 +180,7 @@ $lineEffectDuration: 0.1s;
             @include span(6 of 12 last);
         }
 
-        @include animation(fadeInUp 0.4s ease-in-out);
+        @include animation(fadeInUpSmall 0.4s ease-in-out);
         @include animation-fill-mode(forwards);
 
 
@@ -237,8 +237,8 @@ $lineEffectDuration: 0.1s;
                 position: absolute;
                 display: block;
                 width: 100%;
-                height: 150%;
-                top: -25%;
+                height: 200%;
+
                 @include transform(rotate(20deg));
                 @include transition(all 0.1s ease-in-out);
             }
@@ -246,12 +246,15 @@ $lineEffectDuration: 0.1s;
             &:before {
                 background: #ddd;
                 left: -150%;
+                top: -25%;
+
                 @include transform-origin(100% 50%);
             }
 
             &:after {
                 background: #ccc;
                 right: -150%;
+                top: -50%;
 
                 @include transform-origin(0% 50%);
             }

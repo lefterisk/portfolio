@@ -89,7 +89,7 @@
     }
 }
 
-$aboutContentsAnimationSpeed: 0.4s;
+$aboutContentsAnimationSpeed: 0.3s;
 $aboutContentsAnimationDelay: 0.2s;
 
 .aboutContentOpen {
@@ -157,7 +157,7 @@ $aboutContentsAnimationDelay: 0.2s;
 
             .text {
                 opacity:0;
-                @include animation(fadeInDown $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
+                @include animation(fadeInDownSmall $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
                 @include animation-fill-mode(forwards);
                 text-align: justify;
                 position: relative;
@@ -185,7 +185,7 @@ $aboutContentsAnimationDelay: 0.2s;
 
             .pictureFrame {
                 opacity: 0;
-                @include animation(fadeInUp $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
+                @include animation(fadeInUpSmall $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
                 @include animation-fill-mode(forwards);
 
                 font-size: 1.4em;
@@ -213,7 +213,7 @@ $aboutContentsAnimationDelay: 0.2s;
 
             .buzzwords {
                 opacity: 0;
-                @include animation(fadeInUp $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
+                @include animation(fadeInUpSmall $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
                 @include animation-fill-mode(forwards);
 
                 position: relative;
@@ -275,6 +275,10 @@ $aboutContentsAnimationDelay: 0.2s;
     .socials {
         text-align: center;
         margin: 0;
+        opacity:0;
+
+        @include animation(fadeInDownSmall $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
+        @include animation-fill-mode(forwards);
 
         a {
             display: inline-block;
