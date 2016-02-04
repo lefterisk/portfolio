@@ -23,26 +23,38 @@ angular.module('Portfolio', [
 
         $stateProvider
             // All app states loaded in index.html
-            .state('home', { url: '/', templateUrl: '/tpls/home.html', controller: 'HomeCtrl'
+            .state('home', { url: '/', templateUrl: '/tpls/home.html', controller: 'HomeCtrl',
                 //resolve: {
                 //    UiData: function (UiData) {
                 //        return UiData();
                 //    }
                 //}
             })
-            .state('home.about', { url: 'about', template: '', controller: 'AboutCtrl'
+            .state('home.about', { url: 'about',
+                views : {
+                    'about' : {
+                        templateUrl: '/tpls/about.html',
+                        controller: 'AboutCtrl'
+                    }
+                }
                 //resolve: {
                 //    UiData: function (UiData) {
                 //        return UiData();
                 //    }
                 //}
             })
-            .state('home.work', { url: 'work', template: '', controller: 'WorkCtrl'
-                //resolve: {
-                //    UiData: function (UiData) {
-                //        return UiData();
-                //    }
-                //}
+            .state('home.work', { url: 'work',
+                views : {
+                    'work' : {
+                        templateUrl: '/tpls/work.html',
+                        controller: 'WorkCtrl'
+                    }
+                },
+                resolve: {
+                    PortfolioItems: function (PortfolioItems) {
+                        return PortfolioItems();
+                    }
+                }
             })
             .state('404', { url: '/404', templateUrl: '/tpls/404.html', controller: 'NotFoundCtrl'})
         ;

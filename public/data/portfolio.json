@@ -1,0 +1,284 @@
+{
+  "items" : [
+    {
+      "name" : "Emne Mnimon",
+      "img"  : "/uploads/emne.jpg",
+      "desc" : "Informational web-site about the activities of the Society for the Study of Modern Hellenism",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "HDNT",
+      "img"  : "/uploads/hdnt.jpg",
+      "desc" : "Web-site for the Historical Research, didactics and new Technologies postgraduate programme at the Ionian University Department of History and Department of Informatics",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "Prof. Yannis Kokkonas",
+      "img"  : "/uploads/kokkonas.jpg",
+      "desc" : "Personal web-site for professor Yannis Kokkonas of the Ionian University, Department of Archives and Library Science",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "IAEN",
+      "img"  : "/uploads/iaen.jpg",
+      "desc" : "Digital Library web-application for the Historical Archive of Greek Youth, a research and publication project of the General Secretariat for Youth, featuring full text search with stemming for English,French and Greek Language. The Library supports 52 fully searchable books with content-trees and 3 formats of the pages (image, selectable text, downloadable PDF)",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "Giorgos Romaios",
+      "img"  : "/uploads/romeos.jpg",
+      "desc" : "Personal web-page of politician, author and journalist George Romaios, featuring books and articles portfolio",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "Retsas",
+      "img"  : "/uploads/retsas.jpg",
+      "desc" : "E-bookstore for antique and rare books, prints & manuscripts",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "Leksikon",
+      "img"  : "/uploads/leksiko.jpg",
+      "desc" : "Dictionary for rare and misused phrases in the Greek lannguage",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 1,
+      "url"  : ""
+    },
+    {
+      "name" : "Metaline",
+      "img"  : "/uploads/metaline.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "ABC tv",
+      "img"  : "/uploads/abc.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Thanos Galis",
+      "img"  : "/uploads/galis.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Evropedia",
+      "img"  : "/uploads/evropedia.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Epilegin",
+      "img"  : "/uploads/epilegin.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Alkon",
+      "img"  : "/uploads/alkon.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "AMT",
+      "img"  : "/uploads/amt.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Prestige Kikeris",
+      "img"  : "/uploads/kikeris.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Nefeli Hotel",
+      "img"  : "/uploads/nefeli.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Anax",
+      "img"  : "/uploads/anax.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Artie",
+      "img"  : "/uploads/artie.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Chicco Verde",
+      "img"  : "/uploads/chicco.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "e-stardust",
+      "img"  : "/uploads/stardust.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Diolkos",
+      "img"  : "/uploads/diolkos.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Tzouganakis",
+      "img"  : "/uploads/tzouganakis.jpg",
+      "desc" : "Informational website for artist Michalis Tzouganakis",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Anobolios",
+      "img"  : "/uploads/anovolios.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Hatsios",
+      "img"  : "/uploads/hatsios.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Events Music",
+      "img"  : "/uploads/events.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Stoma",
+      "img"  : "/uploads/stoma.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "E-corfu",
+      "img"  : "/uploads/corfu.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Anaptyxi",
+      "img"  : "/uploads/anaptiksi.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Bar Academy",
+      "img"  : "/uploads/baracademy.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Gibi",
+      "img"  : "/uploads/gibi.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "E-tountas",
+      "img"  : "/uploads/toundas.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Omikron Pro Lighting",
+      "img"  : "/uploads/omikron.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "E-boutique",
+      "img"  : "/uploads/boutique.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Omikron Pro Audio",
+      "img"  : "/uploads/omikronaudio.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "My Halloween",
+      "img"  : "/uploads/halloween.jpg",
+      "desc" : "",
+      "tech" : "HTML, PHP, MySQL, Javascript, JQuery",
+      "type" : 2,
+      "url"  : ""
+    }
+  ]
+}

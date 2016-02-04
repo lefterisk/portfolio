@@ -28,11 +28,18 @@ $susy: (
         rem: true,
     ),
     mobile-breakpoint: 640px,
-    tablet-breakpoint: 860px
+    tablet-breakpoint: 860px,
+    desktop-breakpoint: 1200px
 );
 
+@mixin large-desktop {
+    @media (min-width: susy-get(desktop-breakpoint) + 1px) {
+        @content;
+    }
+}
+
 @mixin desktop {
-    @media (min-width: susy-get(tablet-breakpoint) + 1px ) {
+    @media (min-width: susy-get(tablet-breakpoint) + 1px) and (max-width: susy-get(desktop-breakpoint)) {
         @content;
     }
 }
@@ -182,7 +189,7 @@ div {
 
             .contentContainer {
                 width: 90%;
-                padding: 20px 50px 20px 0px;
+                padding: 20px 50px 20px 0;
                 @include transform(rotate(-10deg));
             }
         }
@@ -205,7 +212,9 @@ div {
             z-index: 2;
 
             .contentContainer {
-                @include transform(rotate(-5deg));
+                width: 90%;
+                padding: 0;
+                @include transform(rotate(0deg));
             }
         }
     }
@@ -326,10 +335,18 @@ div {
         }
 
         .workTitle {
-            opacity: 0;
+            display: none;
+            //top:-70px;
+            //bottom: auto;
+            //right: 40px;
+            //@include transform(rotate(0deg));
+            //
+            //.viewMore {
+            //    opacity:0;
+            //}
         }
 
-        .table .row .cell {
+        &.columnLeft .table .row .cell {
             padding: 70px 0;
         }
     }
@@ -420,7 +437,6 @@ div {
 }
 
 .aboutContentOpen {
-
     .container {
         display: block;
         @include container(100%);
@@ -429,27 +445,49 @@ div {
 
 
         .col {
-            @include desktop {
-                @include span(4 of 12);
+            @include large-desktop {
 
-                &:last-of-type {
+                &.textCol, &.pictureCol {
+                    @include span(4 of 12);
+                }
+
+                &.buzzCol {
                     @include span(4 of 12 last);
                 }
             }
 
-            @include tablet {
-                @include span(6 of 12);
+            @include desktop {
+                &.pictureCol {
+                    @include span(6 of 12 );
+                }
 
-                &:last-of-type {
+                &.textCol {
                     @include span(6 of 12 last);
+                }
+
+                &.buzzCol {
+                    padding-top: em(30);
+                    @include span(12 of 12 last);
+                }
+            }
+
+            @include tablet {
+                &.pictureCol, &.textCol, &.buzzCol{
+                    @include span(12 of 12 );
+                }
+
+                &.buzzCol {
+                    padding-top: em(30);
                 }
             }
 
             @include mobile {
-                @include span(12 of 12);
+                &.pictureCol, &.textCol, &.buzzCol{
+                    @include span(12 of 12 );
+                }
 
-                &:last-of-type {
-                    @include span(12 of 12 last);
+                &.buzzCol {
+                    padding-top: em(30);
                 }
             }
 
@@ -658,8 +696,200 @@ div {
     .ngsb-track {
         width: 100%;
         border-radius: 0;
-        background: 999;
+        background: #999;
+    }
+}
+
+.closeAbout {
+    z-index: 2;
+    position: absolute;
+    display: block;
+    width: em(50);
+    height: em(200);
+    background: #ddd;
+    top: - em(140);
+    right:- em(85);
+    @include transform(rotate(10deg));
+    @include transform-origin(100% 0%);
+    text-decoration: none;
+    @include transition(all 0.2s linear);
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        display: block;
+        @include size(em(35));
+        left: em(7.5);
+        bottom: em(7.5);
+        background: url('/img/close.svg') no-repeat center center;
+        background-size: contain;
     }
 
+    span {
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        padding: em(5) em(12);
+        display: block;
+        font-family: 'Megrim', cursive;
+        font-size: 1.5em;
+    }
+
+    &:hover {
+        top: 0;
+        right: - em(60);
+    }
 }
+
+.columnRight {
+    &.open {
+        padding-top: 100px;
+
+        h1 {
+            display: block;
+        }
+    }
+
+    .closeWork {
+        position: absolute;
+        display: block;
+        width: em(50);
+        height: em(200);
+        background: #ddd;
+        top: - em(150);
+        left:- em(0);
+        z-index: 2;
+        text-decoration: none;
+        @include transition(all 0.2s linear);
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            display: block;
+            @include size(em(35));
+            left: em(7.5);
+            bottom: em(7.5);
+            background: url('/img/close.svg') no-repeat center center;
+            background-size: contain;
+        }
+
+        span {
+            position: relative;
+            text-decoration: none;
+            color: #000;
+            padding: em(5) em(12);
+            display: block;
+            font-family: 'Megrim', cursive;
+            font-size: 1.5em;
+        }
+
+        &:hover {
+            top:- em(10);
+            right: - em(60);
+        }
+    }
+
+    h1 {
+        display: none;
+        @include transform(rotate(-5deg));
+        @include transform-origin(0% 0%);
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        right:0;
+        top:-10px;
+        text-align: right;
+        font-family: 'Megrim', cursive;
+        font-size: 4em;
+        margin:0;
+        padding: 0 30px 0 0;
+        text-shadow: 2px 2px 0px #fff;
+
+        &>span {
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.35em;
+            padding-right: 0px;
+
+            span {
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+    .portfolioWrapper {
+        padding: 25px 0 50px 20px;
+        @include container(95%);
+
+        .portfolioItem {
+            @include span(6 of 12);
+            height:300px;
+            background: #ddd;
+            overflow: hidden;
+            border:3px solid #ddd;
+            position: relative;
+            @include transition(all 0.2s linear);
+            @include transform(rotate(-5deg));
+
+
+            &:nth-of-type(2n) {
+                @include span(6 of 12 last);
+            }
+
+            margin-bottom: em(20);
+
+            .bg {
+                display: block;
+                background-size: cover;
+                position: absolute;
+                top:2px;
+                left: 2px;
+                bottom: 2px;
+                right: 2px;
+                z-index: 1;
+            }
+
+            .overlay {
+                position: relative;
+                height: 100%;
+                text-align: center;
+                opacity: 0;
+                @include transition(all 0.2s linear);
+                z-index: 2;
+
+                .table {
+                    width: 100%;
+                    position: relative;
+                    background: #ddd;
+
+                    .name {
+                        font-family: 'Megrim', cursive;
+                        display: block;
+                        font-size: 2em;
+                    }
+
+                    .desc {
+                        display: block;
+                        font-size: 0.8em;
+                        padding: 10px 20px;
+                    }
+
+                    .tech {
+                        display: block;
+                        font-size: 0.8em;
+                        color: #999;
+                    }
+                }
+            }
+
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+
 

@@ -12,14 +12,13 @@ angular.module(
 
             }],
             link : function (scope, element, attrs) {
-                var contentContainer = element.find('div')[0];
+                var contentContainer = element.find('div')[0],
+                    padding = (attrs.pad) ? attrs.pad : 0;
                 contentContainer = angular.element(contentContainer).find('div')[0];
 
-                element.css('height','auto');
-
-                //$timeout(function() {
-                //    resizeElement();
-                //}, 1000);
+                $timeout(function() {
+                    resizeElement();
+                }, 200);
 
                 angular.element($window).bind('resize', function() {
                     resizeElement();
@@ -34,8 +33,8 @@ angular.module(
 
                 var resizeElement = function () {
 
-                    if ((contentContainer.offsetHeight + 130) >= $window.innerHeight) {
-                        element.css('height', ($window.innerHeight -130) + 'px');
+                    if ((contentContainer.offsetHeight + padding) >= $window.innerHeight) {
+                        element.css('height', ($window.innerHeight -padding) + 'px');
                     } else {
                         //Find child element which has not restricted height
                         element.css('height', (contentContainer.offsetHeight) + 'px');

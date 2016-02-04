@@ -1,0 +1,17 @@
+<div class="portfolioWrapper">
+    <div class="portfolioItem" ng-repeat="item in portfolioItems">
+        <div class="bg" ng-style="{'background-image': 'url(' + item.img+ ')'}"></div>
+
+        <div class="overlay">
+            <div class="table">
+                <div class="row">
+                    <div class="cell">
+                        <span class="name">{{item.name}}</span>
+                        <span class="desc">{{item.desc}}</span>
+                        <span class="tech">{{item.tech}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
