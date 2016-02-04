@@ -9,9 +9,10 @@ angular.module('Portfolio', [
     'ngResource',
     'ngSanitize',
     'ngCookies',
+    'ngTouch',
     'angular-loading-bar',
 
-    'ngScrollbar',
+    'ngScrollable',
 
     //App
     'Portfolio.controllers',
@@ -37,11 +38,6 @@ angular.module('Portfolio', [
                         controller: 'AboutCtrl'
                     }
                 }
-                //resolve: {
-                //    UiData: function (UiData) {
-                //        return UiData();
-                //    }
-                //}
             })
             .state('home.work', { url: 'work',
                 views : {

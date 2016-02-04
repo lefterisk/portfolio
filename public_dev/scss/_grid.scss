@@ -1,0 +1,53 @@
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        container: auto,
+        container-position: center,
+        columns: 12,
+        gutters: .25,
+        column-width: false,
+        global-box-sizing: content-box,
+        last-flow: to,
+        debug: (
+                image: hide,
+                color: rgba(#66f, .25),
+                output: background,
+                toggle: top right,
+        ),
+        use-custom: (
+                background-image: true,
+                background-options: false,
+                box-sizing: true,
+                clearfix: false,
+                rem: true,
+        ),
+        mobile-breakpoint: 640px,
+        tablet-breakpoint: 860px,
+        desktop-breakpoint: 1200px
+);
+
+@mixin large-desktop {
+    @media (min-width: susy-get(desktop-breakpoint) + 1px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: susy-get(tablet-breakpoint) + 1px) and (max-width: susy-get(desktop-breakpoint)) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: susy-get(mobile-breakpoint) + 1px) and (max-width: susy-get(tablet-breakpoint)) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: susy-get(mobile-breakpoint)) {
+        @content;
+    }
+}

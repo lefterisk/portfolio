@@ -11,14 +11,14 @@
                 <div class="row">
                     <div class="cell">
                         <a class="closeAbout" ng-show="isAboutState && !isWorkState" ui-sref="home"><span>C<br/>L<br/>O<br/>S<br/>E</span></a>
-                        <span class="aboutTitle">
+                        <span class="sectionTitle aboutTitle">
                             ABOUT ME <a ui-sref="home.about" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
                         </span>
 
                         <span class="aboutContentNeutral" ng-show="!isAboutState && !isWorkState">
 
                         </span>
-                        <div class="aboutContentOpen" ng-show="isAboutState && !isWorkState" pad="130" scrollsizescanner ng-scrollbar rebuild-on-resize rebuild-on="rebuild:scrollbar">
+                        <div class="aboutContentOpen" ng-show="isAboutState && !isWorkState" scrollsizescanner ng-scrollable="{scrollX:'none',scrollY:'left'}">
                             <div ui-view="about"></div>
                         </div>
                         <span class="aboutContentNeutral" ng-show="!isAboutState && isWorkState">
@@ -31,18 +31,25 @@
     </div>
     <div class="columnRight" ng-class="{open: isWorkState}">
         <div class="contentContainer">
-            <h1><span>A SELECTION<br/><span>OF MY</span></span> WORK</h1>
+            <h1>
+                <span>
+                    <span>
+                        A SELECTION<br/><span>OF MY</span>
+                    </span>
+                    WORK
+                </span>
+            </h1>
             <div class="table">
                 <div class="row">
                     <div class="cell">
                         <a class="closeWork" ng-show="!isAboutState && isWorkState" ui-sref="home"><span>C<br/>L<br/>O<br/>S<br/>E</span></a>
-                        <span class="workTitle">
+                        <span class="sectionTitle workTitle">
                             My Work <a ui-sref="home.work" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
                         </span>
                         <span class="workContentNeutral" ng-show="!isAboutState && !isWorkState">
 
                         </span>
-                        <div class="workContentOpen" ng-show="!isAboutState && isWorkState" tab="50" scrollsizescanner ng-scrollbar rebuild-on-resize rebuild-on="rebuild:scrollbar">
+                        <div class="workContentOpen" ng-show="!isAboutState && isWorkState" angle="5" scrollsizescanner ng-scrollable="{scrollX:'none',scrollY:'left'}">
                             <div ui-view="work"></div>
                         </div>
                         <span class="workContentNeutral" ng-show="isAboutState && !isWorkState">

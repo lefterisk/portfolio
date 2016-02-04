@@ -1,0 +1,337 @@
+$lineEffectDuration: 0.1s;
+
+.columnRight{
+    position: absolute;
+    width: 100%;
+    top: -50%;
+    bottom: -50%;
+    left: 50%;
+    background: #eee;
+    z-index: 1;
+
+    @include transform(rotate(20deg));
+    @include transform-origin(0% 50%);
+    @include transition(all 0.3s ease-in-out);
+
+    .contentContainer {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top:25%;
+        left: 0;
+
+        @include transform(rotate(-20deg));
+        @include transform-origin(0% 50%);
+        @include transition(all 0.3s ease-in-out);
+
+        h1 {
+            display: none;
+        }
+    }
+
+    &.open {
+        z-index: 2;
+        left: 10%;
+
+        @include transform(rotate(5deg));
+
+        .contentContainer {
+            width: 90%;
+            padding: 0;
+
+            @include transform(rotate(0deg));
+
+            .workTitle {
+                display: none;
+            }
+
+            h1 {
+                display: block;
+                @include transform(rotate(-5deg));
+                @include transform-origin(0% 0%);
+                position: absolute;
+                width: 100%;
+                z-index: 2;
+                right:0;
+                top:-10px;
+                text-align: right;
+                font-family: 'Megrim', cursive;
+                font-size: 4em;
+                height: 80px;
+                overflow: hidden;
+                margin:0;
+                padding: 0 30px 0 0;
+                text-shadow: 2px 2px 0 #fff;
+
+                &>span {
+                    display: inline-block;
+                    position: relative;
+                    padding: 5px 10px 5px 5px;
+
+                    &:before {
+                        content: ' ';
+                        position: absolute;
+                        top: 0;
+                        bottom: 10px;
+                        left: 0;
+                        right: 0;
+                        background: #eee;
+                        opacity: 0.7;
+                        z-index: -1;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: -80px;
+                        top: -5px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 80px 80px 0;
+                        border-color: transparent #eee transparent transparent;
+                        opacity: 0.7;
+                    }
+
+                    &>span {
+                        display: inline-block;
+                        font-family: 'Lato', sans-serif;
+                        font-size: 0.35em;
+                        padding-right: 0;
+
+                        span {
+                            letter-spacing: -0.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.workTitle {
+    right: -250px;
+    bottom: 5px;
+    @include transform(rotate(-90deg));
+    @include transform-origin(0% 100%);
+
+    .viewMore {
+        right: -145px;
+        top: 0;
+        @include transform(rotate(90deg));
+        @include transform-origin(0% 13%);
+    }
+}
+
+.closeWork {
+    position: absolute;
+    display: block;
+    width: em(50);
+    height: em(200);
+    background: #ddd;
+    top: - em(150);
+    left: - em(0);
+    z-index: 3;
+    text-decoration: none;
+    @include transition(all 0.2s linear);
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        display: block;
+        @include size(em(35));
+        left: em(7.5);
+        bottom: em(7.5);
+        background: url('/img/close.svg') no-repeat center center;
+        background-size: contain;
+    }
+
+    span {
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        padding: em(5) em(12);
+        display: block;
+        font-family: 'Megrim', cursive;
+        font-size: 1.5em;
+    }
+
+    &:hover {
+        top:- em(10);
+        right: - em(60);
+    }
+}
+
+.portfolioWrapper {
+    padding: 25px 0 50px 20px;
+    @include container(95%);
+
+    .portfolioItem {
+        @include span(6 of 12);
+        height:300px;
+        background: #ddd;
+        overflow: hidden;
+        border:3px solid #ddd;
+        position: relative;
+        margin-bottom: em(20);
+        opacity: 0;
+
+        &:nth-of-type(2n) {
+            @include span(6 of 12 last);
+        }
+
+        @include animation(fadeInUp 0.4s ease-in-out);
+        @include animation-fill-mode(forwards);
+
+
+        @for $i from 1 through 40 {
+            &:nth-child(#{$i}) {
+                @include animation-delay((0.1s * $i) + 0.3s);
+            }
+        }
+
+        .bg {
+            display: block;
+            background-size: cover;
+            position: absolute;
+            top:2px;
+            left: 2px;
+            bottom: 2px;
+            right: 2px;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: relative;
+            height: 100%;
+            text-align: center;
+            z-index: 2;
+
+            .table {
+                width: 100%;
+                position: relative;
+                opacity: 0;
+                z-index: 5;
+
+                .name {
+                    font-family: 'Megrim', cursive;
+                    display: block;
+                    font-size: 2em;
+                }
+
+                .desc {
+                    display: block;
+                    font-size: 0.8em;
+                    padding: 10px 20px;
+                }
+
+                .tech {
+                    display: block;
+                    font-size: 0.8em;
+                    color: #999;
+                }
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 150%;
+                top: -25%;
+                @include transform(rotate(20deg));
+                @include transition(all 0.1s ease-in-out);
+            }
+
+            &:before {
+                background: #ddd;
+                left: -150%;
+                @include transform-origin(100% 50%);
+            }
+
+            &:after {
+                background: #ccc;
+                right: -150%;
+
+                @include transform-origin(0% 50%);
+            }
+
+            .lineTop, .lineRight, .lineBottom, .lineLeft {
+                display: block;
+                position: absolute;
+                background: #999;
+                z-index: 2;
+            }
+
+            .lineTop {
+                top:10px;
+                height: 2px;
+                left:10px;
+                right: calc(100% - 10px);
+
+                @include transition(all $lineEffectDuration ease-in-out $lineEffectDuration);
+            }
+
+            .lineRight {
+                top:10px;
+                right: 10px;
+                width: 2px;
+                bottom: calc(100% - 10px);
+
+                @include transition(all $lineEffectDuration ease-in-out ($lineEffectDuration * 2));
+            }
+
+            .lineBottom {
+                bottom:10px;
+                right: 10px;
+                height: 2px;
+                left: calc(100% - 10px);
+
+                @include transition(all $lineEffectDuration ease-in-out ($lineEffectDuration * 3));
+            }
+
+            .lineLeft {
+                bottom:10px;
+                left:10px;
+                width:2px;
+                top: calc(100% - 10px);
+
+                @include transition(all $lineEffectDuration ease-in-out ($lineEffectDuration * 4));
+            }
+        }
+
+        &:hover {
+            .overlay {
+                &:before {
+                    left:-50%;
+                }
+
+                &:after {
+                    right:-50%;
+                }
+
+                .lineTop {
+                    right: 10px;
+                }
+
+                .lineRight {
+                    bottom: 10px;
+
+                }
+
+                .lineBottom {
+                    left: 10px;
+                }
+
+                .lineLeft {
+                    top: 10px;
+                }
+
+                .table {
+                    @include animation(fadeInUpSmall 0.5s ease-in-out ($lineEffectDuration * 4.5));
+                    @include animation-fill-mode(forwards);
+                }
+            }
+        }
+    }
+}

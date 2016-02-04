@@ -1,0 +1,72 @@
+.scrollable {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.scrollable-content {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+/* Enable the Classes below to have scrollbars not overlap the content */
+/*
+.scrollable-content.scrollable-right {
+    margin-right: 15px;
+}
+.scrollable-content.scrollable-top {
+    margin-top: 15px;
+}
+.scrollable-content.scrollable-left {
+    margin-left: 15px;
+}
+.scrollable-content.scrollable-bottom {
+    margin-bottom: 15px;
+}
+*/
+
+/* if any element is fixed and displayed at full window size, this rule becomes handy */
+.fullwindow .scrollable-content {
+    transform: none !important;
+}
+
+.scrollable .scrollable-content,
+.scrollable .scrollable-slider {
+    @include transition(background-color .2s linear, opacity .2s linear);
+}
+
+.scrollable.active .scrollable-content,
+.scrollable.active .scrollable-slider {
+    @include transition(none);
+}
+
+.scrollable .scrollable-bar {
+    position: absolute;
+    box-sizing: border-box;
+    opacity: 1;
+}
+
+.scrollable:hover .scrollable-bar {
+    opacity: 1;
+}
+
+.scrollable .scrollable-bar:hover {
+    opacity: 1;
+}
+
+.scrollable.active .scrollable-bar {
+    opacity: 1;
+}
+
+.scrollable .scrollable-slider {
+    background: #999;
+}
+
+.scrollable .scrollable-bar-x .scrollable-slider {
+    height: 8px;
+}
+
+.scrollable .scrollable-bar-y .scrollable-slider {
+    width: 10px;
+}

@@ -32,6 +32,5 @@
     "angular-loading-bar": "~0.8.0",
     "susy": "^2.2.12",
     "bourbon": "^4.2.6",
-    "ng-scrollbar": "~0.0.8"
   }
 }
