@@ -16,10 +16,6 @@ angular.module(
                     angle = (attrs.angle) ? parseInt(attrs.angle) : 0;
                 contentContainer = angular.element(contentContainer).find('div')[0];
 
-                $timeout(function() {
-                    resizeElement();
-                }, 1000);
-
                 angular.element($window).bind('resize', function() {
                     resizeElement();
                 });
@@ -36,9 +32,10 @@ angular.module(
                 var resizeElement = function () {
 
                     if (angle > 0) {
+
                         var heightForAngle = (contentContainer.offsetHeight * (angle/100));
 
-                        if ((contentContainer.offsetHeight + heightForAngle - 40) >= $window.innerHeight) {
+                        if ((contentContainer.offsetHeight + heightForAngle + 40) >= $window.innerHeight) {
                             element.css({
                                 'position' : 'relative',
                                 'height': ($window.innerHeight + heightForAngle - 40) + 'px',
@@ -53,7 +50,7 @@ angular.module(
                         }
 
                     } else {
-                        if ((contentContainer.offsetHeight - 40) >= $window.innerHeight) {
+                        if ((contentContainer.offsetHeight + 40) >= $window.innerHeight) {
                             element.css('height', ($window.innerHeight - 40) + 'px');
                         } else {
                             //Find child element which has not restricted height
@@ -66,5 +63,4 @@ angular.module(
             }
         }
     }])
-
 ;

@@ -12,9 +12,11 @@ div {
 }
 
 .outerFrame {
+    $desktopOutlineBorder: 20px;
+
     height: 100%;
     position: relative;
-    padding:20px;
+    padding: $desktopOutlineBorder;
 
     &>.borderTop, &>.borderLeft, &>.borderBottom, &>.borderRight {
         display: block;
@@ -26,7 +28,7 @@ div {
     &>.borderTop {
         top:0;
         left: 0;
-        height: 20px;
+        height: $desktopOutlineBorder;
         width: 100%;
     }
 
@@ -34,13 +36,13 @@ div {
         top:0;
         left: 0;
         bottom: 0;
-        width: 20px;
+        width: $desktopOutlineBorder;
     }
 
     &>.borderBottom {
         bottom:0;
         left: 0;
-        height: 20px;
+        height: $desktopOutlineBorder;
         width: 100%;
     }
 
@@ -48,7 +50,7 @@ div {
         top:0;
         right: 0;
         bottom: 0;
-        width: 20px;
+        width: $desktopOutlineBorder;
     }
 
     div[ui-view] {
@@ -94,8 +96,8 @@ div {
 .sectionTitle {
     font-family: 'Megrim', cursive;
     font-size: 4em;
-    line-height: 55px;
-    height: 55px;
+    line-height: 65px;
+    height: 65px;
     display: block;
     position: absolute;
 
@@ -143,5 +145,48 @@ div {
                 right: -5px;
             }
         }
+    }
+}
+
+@include large-desktop {
+
+}
+
+@include desktop {
+
+}
+
+@include tablet {
+
+}
+
+@include mobile {
+
+    $mobileOutlineBorder: 10px;
+
+    .outerFrame {
+        padding: $mobileOutlineBorder;
+
+        &>.borderTop {
+            height: $mobileOutlineBorder;
+        }
+
+        &>.borderLeft {
+            width: $mobileOutlineBorder;
+        }
+
+        &>.borderBottom {
+            height: $mobileOutlineBorder;
+        }
+
+        &>.borderRight {
+            width: $mobileOutlineBorder;
+        }
+    }
+
+    .sectionTitle {
+        font-size: 2.5em;
+        line-height: 45px;
+        height: 45px;
     }
 }

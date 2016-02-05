@@ -36,7 +36,6 @@
             @include transform(rotate(-10deg));
 
             .aboutTitle {
-                //background: #fff;
                 z-index: 100;
                 @include transform(rotate(0deg));
 
@@ -55,12 +54,12 @@
                 &:after {
                     content: '';
                     position: absolute;
-                    right: -75px;
+                    right: -85px;
                     top: -5px;
                     width: 0;
                     height: 0;
                     border-style: solid;
-                    border-width: 65px 65px 0 0;
+                    border-width: 75px 75px 0 0;
                     border-color: #fff transparent transparent transparent;
                     opacity: 0.7;
                 }
@@ -75,14 +74,14 @@
 
 .aboutTitle {
     top: 5px;
-    left: 5px;
+    left: 10px;
 
     @include transform(rotate(90deg));
     @include transform-origin(25px 25px);
 
     .viewMore {
         right: -100px;
-        top: 0;
+        top: 3px;
 
         @include transform(rotate(-90deg));
         @include transform-origin(-25% 50%);
@@ -127,16 +126,6 @@ $aboutContentsAnimationDelay: 0.2s;
             }
 
             @include tablet {
-                &.pictureCol, &.textCol, &.buzzCol{
-                    @include span(12 of 12 );
-                }
-
-                &.buzzCol {
-                    padding-top: em(30);
-                }
-            }
-
-            @include mobile {
                 &.pictureCol, &.textCol, &.buzzCol{
                     @include span(12 of 12 );
                 }
@@ -306,7 +295,6 @@ $aboutContentsAnimationDelay: 0.2s;
 
             &:hover {
                 @include transform(rotate(20deg));
-
             }
         }
     }
@@ -350,5 +338,160 @@ $aboutContentsAnimationDelay: 0.2s;
     &:hover {
         top: 0;
         right: - em(60);
+    }
+}
+
+@include large-desktop {
+
+}
+
+@include desktop {
+
+}
+
+@include tablet {
+
+}
+
+@include mobile {
+    .aboutTitle {
+        top: 5px;
+        left: 10px;
+        overflow: visible;
+        min-width: 180px;
+        @include transform-origin(9% 32%);
+
+        .viewMore {
+            right: -80px;
+            top:2px;
+        }
+    }
+
+    .closeAbout {
+        z-index: 101;
+        width: em(50);
+        height: em(50);
+        top: 5px;
+        right: -5px;
+
+        span {
+            display: none;
+        }
+    }
+
+    .columnLeft {
+        width: 100%;
+        right: 50%;
+
+        &.open {
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            top:0;
+
+            @include transform(rotate(0deg));
+
+            .contentContainer {
+                width: 100%;
+                height: 100%;
+                top:0;
+                padding: 0 0 0 0;
+
+                @include transform(rotate(0deg));
+
+                .aboutTitle {
+                    &:after {
+                        right: -65px;
+                        border-width: 55px 55px 0 0;
+                    }
+                }
+
+                .aboutContentOpen {
+                    .container {
+                        display: block;
+                        padding: 60px 5px 20px 5px;
+
+                        .col {
+                            &.pictureCol, &.textCol, &.buzzCol{
+                                @include span(12 of 12 );
+                            }
+
+                            &.buzzCol {
+                                padding-top: em(30);
+                            }
+
+                            .title {
+                                padding: 4px 6px;
+                                font-size: 0.8em;
+                                font-weight: 200;
+                            }
+
+                            .pictureFrame {
+                                font-size: 1.2em;
+                                height: 300px;
+
+                                .title {
+                                    @include transform(rotate(0deg));
+                                    top: -5px;
+                                    left: 5px;
+                                }
+
+                                .picture {
+                                    top: 5px;
+                                    left: 5px;
+                                    right: 5px;
+                                    bottom: 5px;
+                                }
+                            }
+
+                            .text {
+                                text-align: justify;
+                                padding: 5px;
+                                font-size: 1em;
+                                font-weight: 200;
+                                line-height: 1.4em;
+
+                                p {
+                                    margin: 0;
+                                    padding: 0 0 15px 0;
+
+                                    &:last-of-type {
+                                        padding-bottom: 0;
+                                    }
+                                }
+
+                                .title {
+                                    font-size: 1em;
+                                    left: 5px;
+                                    top: -30px;
+                                }
+                            }
+
+                            .buzzwords {
+                                font-size: 1.2em;
+                                text-align: center;
+
+                                h2 {
+                                    margin: 20px 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .socials {
+                        h2 {
+                            padding-top: 0;
+                            margin-top: 0;
+                        }
+
+                        a {
+                            @include size(50px);
+                            margin: 2px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

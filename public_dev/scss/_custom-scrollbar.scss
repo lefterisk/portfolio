@@ -70,3 +70,9 @@
 .scrollable .scrollable-bar-y .scrollable-slider {
     width: 10px;
 }
+
+@include mobile {
+    .scrollable .scrollable-bar-y .scrollable-slider {
+        width: 5px;
+    }
+}
