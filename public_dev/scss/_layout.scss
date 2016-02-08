@@ -12,8 +12,6 @@ div {
 }
 
 .outerFrame {
-    $desktopOutlineBorder: 20px;
-
     height: 100%;
     position: relative;
     padding: $desktopOutlineBorder;
@@ -21,7 +19,7 @@ div {
     &>.borderTop, &>.borderLeft, &>.borderBottom, &>.borderRight {
         display: block;
         position: absolute;
-        background: #eee;
+        background: $outlineBorderBackground;
         z-index: 2;
     }
 
@@ -161,8 +159,6 @@ div {
 }
 
 @include mobile {
-
-    $mobileOutlineBorder: 10px;
 
     .outerFrame {
         padding: $mobileOutlineBorder;

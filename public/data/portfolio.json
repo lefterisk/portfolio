@@ -1,6 +1,38 @@
 {
   "items" : [
     {
+      "name" : "PUZZLE",
+      "img"  : "/uploads/puzzle.jpg",
+      "desc" : "Promotional web-site for artist PUZZLE",
+      "tech" : "Javascript, Angular",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Acknowledgement",
+      "img"  : "/uploads/acknowledgement.jpg",
+      "desc" : "Identity web-site for the excellent London agency Acknowledgement ltd",
+      "tech" : "ZF2, MySQL, Javascript, Angular",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Recognition",
+      "img"  : "/uploads/recognition.jpg",
+      "desc" : "Identity web-site for Recognition, music industry experts, UX and email marketing professionals",
+      "tech" : "ZF2, MySQL, Javascript, Angular",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
+      "name" : "Latitude",
+      "img"  : "/uploads/latitude.jpg",
+      "desc" : "Informational web-site for Latitude travel, Blog",
+      "tech" : "ZF2, MySQL, Javascript, Angular",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
       "name" : "Emne Mnimon",
       "img"  : "/uploads/emne.jpg",
       "desc" : "Informational web-site about the activities of the Society for the Study of Modern Hellenism",

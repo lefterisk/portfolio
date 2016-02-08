@@ -6,7 +6,7 @@ $lineEffectDuration: 0.1s;
     top: -50%;
     bottom: -50%;
     left: 50%;
-    background: #eee;
+    background: $outlineBorderBackground;
     z-index: 1;
 
     @include transform(rotate(20deg));
@@ -353,12 +353,39 @@ $lineEffectDuration: 0.1s;
 
 }
 
-@include desktop {
-
-}
-
 @include tablet {
+    .columnRight {
+        &.open {
+            .contentContainer {
 
+                .portfolioWrapper {
+                    padding: 80px 5px 10px 5px;
+
+                    .portfolioItem {
+                        @include span(12 of 12);
+                        margin-bottom: em(20);
+
+                        &:nth-of-type(2n) {
+                            @include span(12 of 12 last);
+                        }
+
+                        .overlay {
+                            .table {
+                                .name {
+                                    font-weight: bold;
+                                }
+
+                                .desc {
+                                    font-size: 1.1em;
+                                    font-weight: 200;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include mobile {
@@ -369,7 +396,7 @@ $lineEffectDuration: 0.1s;
         bottom: 185px;
 
         .viewMore {
-            top: 0px;
+            top: 0;
             right: -84px;
         }
     }

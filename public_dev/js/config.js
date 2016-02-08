@@ -23,8 +23,8 @@ angular.module('Portfolio', [
     .config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-            // All app states loaded in index.html
-            .state('home', { url: '/', templateUrl: '/tpls/home.html', controller: 'HomeCtrl',
+            // All app states loaded in index.php
+            .state('home', { url: '/', templateUrl: './tpls/home.html', controller: 'HomeCtrl',
                 //resolve: {
                 //    UiData: function (UiData) {
                 //        return UiData();
@@ -34,7 +34,7 @@ angular.module('Portfolio', [
             .state('home.about', { url: 'about',
                 views : {
                     'about' : {
-                        templateUrl: '/tpls/about.html',
+                        templateUrl: './tpls/about.html',
                         controller: 'AboutCtrl'
                     }
                 }
@@ -42,7 +42,7 @@ angular.module('Portfolio', [
             .state('home.work', { url: 'work',
                 views : {
                     'work' : {
-                        templateUrl: '/tpls/work.html',
+                        templateUrl: './tpls/work.html',
                         controller: 'WorkCtrl'
                     }
                 },
@@ -52,7 +52,7 @@ angular.module('Portfolio', [
                     }
                 }
             })
-            .state('404', { url: '/404', templateUrl: '/tpls/404.html', controller: 'NotFoundCtrl'})
+            .state('404', { url: '/404', templateUrl: './tpls/404.html', controller: 'NotFoundCtrl'})
         ;
 
         $urlRouterProvider.otherwise(function($injector) {
