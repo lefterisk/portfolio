@@ -9,6 +9,14 @@
       "url"  : ""
     },
     {
+      "name" : "CMT",
+      "img"  : "/uploads/cmt.jpg",
+      "desc" : "Proprietary Content Management Toolkit specialized for rapid development with complex data-structures",
+      "tech" : "ZF2, MySQL, Javascript, Angular",
+      "type" : 2,
+      "url"  : ""
+    },
+    {
       "name" : "Acknowledgement",
       "img"  : "/uploads/acknowledgement.jpg",
       "desc" : "Identity web-site for the excellent London agency Acknowledgement ltd",
