@@ -5,14 +5,12 @@
     </div>
     <div class="columnLeft" ng-class="{open: isAboutState}">
         <div class="contentContainer">
-            <!--<a ui-sref="home" ng-click="isAboutState = isWorkState= false;">home</a>-->
-
             <div class="table">
                 <div class="row">
                     <div class="cell">
                         <a class="closeAbout" ng-show="isAboutState && !isWorkState" ui-sref="home"><span>C<br/>L<br/>O<br/>S<br/>E</span></a>
-                        <span class="sectionTitle aboutTitle">
-                            ABOUT ME <a ui-sref="home.about" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
+                        <span class="sectionTitle aboutTitle" ng-click="goToState('home.about')">
+                            ABOUT&nbsp;&nbsp;ME <a ui-sref="home.about" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
                         </span>
 
                         <span class="aboutContentNeutral" ng-show="!isAboutState && !isWorkState">
@@ -43,8 +41,8 @@
                 <div class="row">
                     <div class="cell">
                         <a class="closeWork" ng-show="!isAboutState && isWorkState" ui-sref="home"><span>C<br/>L<br/>O<br/>S<br/>E</span></a>
-                        <span class="sectionTitle workTitle">
-                            My Work <a ui-sref="home.work" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
+                        <span class="sectionTitle workTitle" ng-click="goToState('home.work')">
+                            MY&nbsp;&nbsp;WORK <a ui-sref="home.work" class="viewMore">E<br/>X<br/>P<br/>L<br/>O<br/>R<br/>E</a>
                         </span>
                         <span class="workContentNeutral" ng-show="!isAboutState && !isWorkState">
 

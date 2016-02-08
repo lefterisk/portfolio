@@ -1,0 +1,17 @@
+.error404 {
+    text-align: center;
+
+    h1 {
+        font-weight: 400;
+        font-family: $baseFont;
+        font-size: 7em;
+        color: #999;
+        margin: 0;
+        text-shadow: 5px 5px 0px #ddd;
+    }
+
+    h2 {
+        color: #999;
+        font-weight: 200;
+    }
+}

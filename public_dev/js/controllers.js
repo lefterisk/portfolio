@@ -21,15 +21,17 @@ angular.module('Portfolio.controllers', [])
                 }
             }
         );
+
+        $scope.goToState = function (state) {
+            $state.go(state);
+        };
     }])
     .controller('AboutCtrl',['$rootScope','$scope', '$state', function ($rootScope, $scope, $state) {
-        console.log('About1');
         $rootScope.isWorkState = false;
         $rootScope.isAboutState = true;
 
     }])
     .controller('WorkCtrl',['$rootScope', '$scope', '$state', 'PortfolioItems', function ($rootScope, $scope, $state, PortfolioItems) {
-        console.log('Work');
         $rootScope.isWorkState = true;
         $rootScope.isAboutState = false;
 

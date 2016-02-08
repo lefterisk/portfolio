@@ -4,7 +4,7 @@ html,body {
     padding: 0;
     overflow: hidden;
     position: relative;
-    font-family: 'Lato', sans-serif;
+    font-family: $baseFont;
 }
 
 div {
@@ -92,8 +92,9 @@ div {
 }
 
 .sectionTitle {
-    font-family: 'Megrim', cursive;
+    font-family: $titleFont;
     font-size: 4em;
+    letter-spacing: -4px;
     line-height: 65px;
     height: 65px;
     display: block;
@@ -106,6 +107,7 @@ div {
         color: #000;
         text-decoration: none;
         font-size: 0.2em;
+        letter-spacing: 2px;
         line-height: 1em;
         padding: 8px 10px;
         border: 1px solid #000;

@@ -53,7 +53,7 @@ $lineEffectDuration: 0.1s;
                 right:0;
                 top:-10px;
                 text-align: right;
-                font-family: 'Megrim', cursive;
+                font-family: $titleFont;
                 font-size: 4em;
                 height: 80px;
                 overflow: hidden;
@@ -67,7 +67,7 @@ $lineEffectDuration: 0.1s;
                 &>span {
                     display: inline-block;
                     position: relative;
-                    padding: 5px 10px 5px 5px;
+                    padding: 0 10px 5px 5px;
 
                     &:before {
                         content: ' ';
@@ -96,7 +96,7 @@ $lineEffectDuration: 0.1s;
 
                     &>span {
                         display: inline-block;
-                        font-family: 'Lato', sans-serif;
+                        font-family: $titleFont;
                         font-size: 0.35em;
                         padding-right: 0;
 
@@ -112,7 +112,7 @@ $lineEffectDuration: 0.1s;
 
 .workTitle {
     right: 0;
-    bottom: 257px;
+    bottom: 220px;
 
     @include transform(rotate(-90deg));
     @include transform-origin(100% 100%);
@@ -130,9 +130,10 @@ $lineEffectDuration: 0.1s;
     position: absolute;
     display: block;
     width: em(50);
-    height: em(200);
+    height: em(180);
     background: #ddd;
-    top: - em(150);
+    line-height: 1.5em;
+    top: - em(130);
     left: - em(0);
     z-index: 3;
     text-decoration: none;
@@ -156,7 +157,7 @@ $lineEffectDuration: 0.1s;
         color: #000;
         padding: em(5) em(12);
         display: block;
-        font-family: 'Megrim', cursive;
+        font-family: $titleFont;
         font-size: 1.5em;
     }
 
@@ -224,7 +225,7 @@ $lineEffectDuration: 0.1s;
                 z-index: 5;
 
                 .name {
-                    font-family: 'Megrim', cursive;
+                    font-family: $titleFont;
                     display: block;
                     font-size: 2em;
                 }
@@ -391,12 +392,12 @@ $lineEffectDuration: 0.1s;
 @include mobile {
 
     .workTitle {
-        min-width: 180px;
+        min-width: 150px;
         right: 0;
-        bottom: 185px;
+        bottom: 150px;
 
         .viewMore {
-            top: 0;
+            top: -2px;
             right: -84px;
         }
     }

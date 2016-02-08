@@ -58,7 +58,9 @@ gulp.task('vendor-js', function () {
 
             'bower_components/angular-ui-router/release/angular-ui-router.min.js',
 
-            'bower_components/angular-loading-bar/build/loading-bar.min.js'
+            'bower_components/angular-loading-bar/build/loading-bar.min.js',
+
+            'bower_components/angular-google-analytics/dist/angular-google-analytics.min.js'
         ]
     )
         .pipe(concat('vendor.min.js'))

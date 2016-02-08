@@ -14,6 +14,8 @@ angular.module('Portfolio', [
 
     'ngScrollable',
 
+    'angular-google-analytics',
+
     //App
     'Portfolio.controllers',
     'Portfolio.services',
@@ -24,13 +26,7 @@ angular.module('Portfolio', [
 
         $stateProvider
             // All app states loaded in index.php
-            .state('home', { url: '/', templateUrl: './tpls/home.html', controller: 'HomeCtrl',
-                //resolve: {
-                //    UiData: function (UiData) {
-                //        return UiData();
-                //    }
-                //}
-            })
+            .state('home', { url: '/', templateUrl: './tpls/home.html', controller: 'HomeCtrl'})
             .state('home.about', { url: 'about',
                 views : {
                     'about' : {
@@ -120,7 +116,26 @@ angular.module('Portfolio', [
     .config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     }])
-    .run(['$rootScope', '$state', function ($rootScope, $state) {
+    .config(function(AnalyticsProvider) {
+        // initial configuration
+        AnalyticsProvider.setAccount('UA-32876846-1');
+
+        // track all routes (or not)
+        AnalyticsProvider.trackPages(true);
+
+        //Optional set domain (Use 'none' for testing on localhost)
+//        AnalyticsProvider.setDomainName('ack-2014.acknowledgement.co.uk');
+
+        // Use analytics.js instead of ga.js
+        AnalyticsProvider.useAnalytics(false);
+
+        // Ignore first page view... helpful when using hashes and whenever your bounce rate looks obscenely low.
+        AnalyticsProvider.ignoreFirstPageLoad(true);
+
+        // change page event name for ui-router
+        AnalyticsProvider.setPageEvent('$stateChangeSuccess');
+    })
+    .run(['$rootScope', '$state', 'Analytics', function ($rootScope, $state, Analytics) {
 
         //IE8 fix for non-existent indexOf extension
         if (!Array.prototype.indexOf) {

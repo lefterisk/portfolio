@@ -81,7 +81,7 @@
 
     .viewMore {
         right: -100px;
-        top: 3px;
+        top: 5px;
 
         @include transform(rotate(-90deg));
         @include transform-origin(-25% 50%);
@@ -142,13 +142,13 @@ $aboutContentsAnimationDelay: 0.2s;
                 background: #999;
                 color: #fff;
                 font-weight: 400;
+                font-family: $titleFont;
             }
 
             .text {
                 opacity:0;
                 @include animation(fadeInDownSmall $aboutContentsAnimationSpeed ease-in-out $aboutContentsAnimationDelay);
                 @include animation-fill-mode(forwards);
-                text-align: justify;
                 position: relative;
                 display: block;
                 background: #eee;
@@ -305,10 +305,11 @@ $aboutContentsAnimationDelay: 0.2s;
     position: absolute;
     display: block;
     width: em(50);
-    height: em(200);
+    height: em(180);
     background: #ddd;
-    top: - em(140);
-    right:- em(85);
+    line-height: 1.5em;
+    top: - em(120);
+    right:- em(80);
     @include transform(rotate(10deg));
     @include transform-origin(100% 0%);
     text-decoration: none;
@@ -331,7 +332,7 @@ $aboutContentsAnimationDelay: 0.2s;
         color: #000;
         padding: em(5) em(12);
         display: block;
-        font-family: 'Megrim', cursive;
+        font-family: $titleFont;
         font-size: 1.5em;
     }
 
@@ -341,29 +342,17 @@ $aboutContentsAnimationDelay: 0.2s;
     }
 }
 
-@include large-desktop {
-
-}
-
-@include desktop {
-
-}
-
-@include tablet {
-
-}
-
 @include mobile {
     .aboutTitle {
         top: 5px;
-        left: 10px;
+        left: 15px;
         overflow: visible;
-        min-width: 180px;
+        min-width: 140px;
         @include transform-origin(9% 32%);
 
         .viewMore {
             right: -80px;
-            top:2px;
+            top:3px;
         }
     }
 

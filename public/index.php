@@ -1,7 +1,8 @@
 <?php
     $name        = "Lefteris Kokkonas";
-    $title       = "Lefteris Kokkonas, web professional";
+    $title       = "Lefteris Kokkonas, senior web-developer, UX Consultant";
     $description = "Lefteris Kokkonas is a web developer and entrepreneur. Specialises in building complex data management and visualisation platforms.";
+    $image       = "http://www.lefterisk.com/img/brand.jpg";
 ?>
 <!DOCTYPE html>
 <html ng-app="Portfolio">
@@ -12,7 +13,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="./css/vendor.min.css">
     <link rel="stylesheet" href="./css/app.css">
-    <link href='https://fonts.googleapis.com/css?family=Megrim|Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Dosis:200' rel='stylesheet' type='text/css'>
 
     <title><?php echo $title; ?></title>
     <meta name="description" content="<?php echo $description; ?>">
@@ -21,10 +22,10 @@
     <meta name="twitter:creator" content="<?php echo $name; ?>">
     <meta name="twitter:title" content="<?php echo $title; ?>">
     <meta name="twitter:description" content="<?php echo $description; ?>">
-    <meta name="twitter:image:src" content="http://www.lefterisk.com/img/brand.png">
+    <meta name="twitter:image:src" content="<?php echo $image; ?>">
     <meta property="og:url" content="http://www.lefterisk.com/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://www.lefterisk.com/img/brand.png">
+    <meta property="og:image" content="<?php echo $image; ?>">
     <meta property="og:description" content="<?php echo $description; ?>">
     <meta property="og:site_name" content="<?php echo $name; ?>">
     <meta name="og:title" content="<?php echo $title; ?>" />
@@ -43,7 +44,7 @@
 {
     "@context" : "http://schema.org",
     "@type" : "Person",
-    "name" : "Lefteris Kokkonas",
+    "name" : "<?php echo $name; ?>",
     "url" : "http://www.lefterisk.com",
     "sameAs" : [
         "http://www.facebook.com/lefteris.kokkonas",
@@ -55,9 +56,9 @@
         "@id": "http://www.lefterisk.com/about"
     },
     "birthDate": "1985-03-27",
-    "jobTitle": "Senior web-developer, UX Consultant",
-    "description" : "Lefteris Kokkonas is a web developer and entrepreneur. Specialises in building complex data management and visualisation platforms.",
-    "image" : "http://www.lefterisk.com/img/brand.png"
+    "jobTitle": "<?php echo $title; ?>",
+    "description" : "<?php echo $description; ?>",
+    "image" : "<?php echo $image; ?>"
 }
 </script>
 </body>
