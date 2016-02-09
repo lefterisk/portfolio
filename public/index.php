@@ -11,10 +11,14 @@
     <base href="/">
     <link rel="icon" type="image/x-icon" href="http://www.lefterisk.com/favicon.ico">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="./css/vendor.min.css">
-    <link rel="stylesheet" href="./css/app.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Dosis:200' rel='stylesheet' type='text/css'>
+    <style>
+        /*Inlining minified css resources to save on number of requests*/
+        <?php require_once("./css/vendor.min.css"); ?>
+        <?php require_once("./css/app.css"); ?>
 
+        /* minified  <link href='https://fonts.googleapis.com/css?family=Lato:400,300|Dosis:200' rel='stylesheet' type='text/css'>*/
+        @font-face{font-family:Dosis;font-style:normal;font-weight:200;src:local('Dosis ExtraLight'),local('Dosis-ExtraLight'),url(https://fonts.gstatic.com/s/dosis/v4/zuuDDmIlQfJeEM3Uf6kkpnYhjbSpvc47ee6xR_80Hnw.woff) format('woff')}@font-face{font-family:Lato;font-style:normal;font-weight:300;src:local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v11/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff) format('woff')}@font-face{font-family:Lato;font-style:normal;font-weight:400;src:local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff')}
+    </style>
     <title><?php echo $title; ?></title>
     <meta name="description" content="<?php echo $description; ?>">
     <meta name="twitter:card" content="summary_large_image">
@@ -38,8 +42,11 @@
     <span class="borderRight"></span>
     <div ui-view></div>
 </div>
-<script src="./js/vendor.min.js"></script>
-<script src="./js/app.min.js"></script>
+<script type="application/javascript">
+    /*Inlining minified js resources to save on number of requests*/
+    <?php require_once("./js/vendor.min.js");?>
+    <?php require_once("./js/app.min.js");?>
+</script>
 <script type="application/ld+json">
 {
     "@context" : "http://schema.org",
