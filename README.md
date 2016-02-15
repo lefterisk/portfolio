@@ -22,7 +22,7 @@ Assuming `npm`, `bower` are already installed globally
 * `bower install`
 * `gulp watch-init`
 
-***Dependencies
+###Dependencies
 * Angular
 * Bourbon
 * Susy
