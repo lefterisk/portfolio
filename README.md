@@ -3,7 +3,7 @@ This is a static website, everything required for production is in the `public` 
 
 Tech stack used:
 * npm for server dependencies (Gulp, Bower etc)
-* Bower for client dependencies
+* Bower for frontend dependencies
 * Gulp for compiling all vendor dependencies, app code, scss files etc
 
 The building process is run by gulp. The gulp file `gulpfile.js` contains distinctive tasks such as:
@@ -21,3 +21,8 @@ Assuming `npm`, `bower` are already installed globally
 * `npm install`
 * `bower install`
 * `gulp watch-init`
+
+***Dependencies
+* Angular
+* Bourbon
+* Susy
